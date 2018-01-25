@@ -21,26 +21,26 @@ namespace AccessAzureStorage.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Upload()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase File)
         {
             try
             {
                 CloudBlobContainer Container = Client.GetContainerReference("file-container");
                 Container.CreateIfNotExists();
-                string FileName = DateTime.Now.ToString() + ".txt";
 
-                CloudBlockBlob Blob = Container.GetBlockBlobReference(FileName);
-                Blob.UploadText("File written on " + DateTime.Now.ToString());
+                CloudBlockBlob Blob = Container.GetBlockBlobReference(File.FileName);
+                Blob.UploadFromStream(File.InputStream);
             }
             catch (Exception)
             {
                 return View("Error");
             }
-            return View("Success");
-        }
-
-        public ActionResult Download()
-        {
             return View("Success");
         }
     }
