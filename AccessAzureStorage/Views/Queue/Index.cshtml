@@ -6,8 +6,12 @@
 <div class="col-md-10 col-md-offset-1">
     <div class="banner-text text-center">
         <h1>Queue Services</h1>
-        <span class="btn btn-large">@Html.ActionLink("Send Message","Upload")</span> <br /> <br />
-        <span class="btn btn-large">@Html.ActionLink("Receive Message", "Download")</span>
+        @using (Html.BeginForm("Index", "Queue", FormMethod.Post))
+        {
+            <input type="text" class="form-control" name="Message" placeholder="Input/Output" value="@ViewBag.Message"><br/><br/>
+            <input type="submit" name="action" value="Send Message" class="btn btn-large">
+            <input type="submit" name="action" value="Receive Message" class="btn btn-large">
+        }
 </div>
 </div>
 
