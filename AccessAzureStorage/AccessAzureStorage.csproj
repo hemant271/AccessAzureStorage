@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/7f404d67-2038-4904-82a2-9f0e9385e0e8/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/AccessAzureStorage-1</ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -154,10 +155,20 @@
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\hp-app - Web Deploy.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="StylePages\Css\animate.min.css" />
+    <Content Include="StylePages\Css\bootstrap.min.css" />
+    <Content Include="StylePages\Css\flexslider.css" />
+    <Content Include="StylePages\Css\font-awesome.min.css" />
+    <Content Include="StylePages\Css\jquery.fancybox.css" />
+    <Content Include="StylePages\Css\main.css" />
+    <Content Include="StylePages\Css\responsive.css" />
+    <Content Include="StylePages\Image\banner.jpg" />
+    <Content Include="StylePages\Image\logo.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +205,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Table\Upload.cshtml" />
     <Content Include="Views\Blob\Upload.cshtml" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -203,6 +215,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
