@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.WindowsAzure.MobileServices;
 using AccessAzureStorage.Models;
 using System.Net.Http;
+using System.Configuration;
 
 namespace AccessAzureStorage.Controllers
 {
@@ -24,7 +25,7 @@ namespace AccessAzureStorage.Controllers
         [HttpPost]
         public ActionResult Upload(EmployeeData Record)
         {
-            var client = new MobileServiceClient("https://hp-mob-app.azurewebsites.net");
+            var client = new MobileServiceClient(ConfigurationManager.AppSettings.Get("MobileAppUrl"));
 
             IMobileServiceTable<EmployeeData> EmployeeTable = client.GetTable<EmployeeData>();
 
