@@ -15,6 +15,7 @@ namespace AccessAzureStorage.Models
         }
 
         public EmployeeData() { }
+        public string id { get; set; }
         public string Name { get; set; }
         public string EmployeeId { get; set; }
         public string Domain { get; set; }
